@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { Button, Container } from "react-bootstrap";
-import "./DownloadButton.css";
 
 const DownloadButton = () => {
   // const [showButton, setShowButton] = useState(true);

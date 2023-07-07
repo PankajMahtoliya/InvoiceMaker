@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import "./InvoiceLogo.css";
 import InvoiceNoAndDate from "../InvoiceNoAndDate/InvoiceNoAndDate";
 
 const InvoiceLogo = () => {
@@ -44,8 +43,25 @@ const InvoiceLogo = () => {
                 <Button onClick={handleUploadClick}>Upload Logo</Button>
               )}
               {logo && (
-                <div className="logo-container">
-                  <img src={logo} className="logo" alt="Logo" />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={logo}
+                    style={{
+                      height: "100px",
+                      width: "100px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                    alt="Logo"
+                  />
                   <Button onClick={handleDeleteClick}>Delete</Button>
                 </div>
               )}
