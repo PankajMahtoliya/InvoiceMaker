@@ -23,7 +23,7 @@ const DownloadButton = () => {
   return (
     <div className="mt-5">
       <Container
-        style={{ display: "flex", justifyContent: "end" }}
+        style={{ display: "flex", justifyContent: "end", padding: "0 40px" }}
       >
         <Button onClick={handleDownloadPDF}>
           Download as PDF
