@@ -25,6 +25,7 @@ const InvoiceLogo = () => {
 
   return (
     <div>
+      <hr style={{ border: "5px solid blue" }} />
       <Row>
         <Col>
           <InvoiceNoAndDate />
@@ -68,8 +69,8 @@ const InvoiceLogo = () => {
             </div>
           </div>
         </Col>
-        <hr style={{ border: "5px solid blue" }} />
       </Row>
+      <hr style={{ border: "5px solid blue" }} />
     </div>
   );
 };

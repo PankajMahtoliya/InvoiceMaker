@@ -4,48 +4,31 @@ import jsPDF from "jspdf";
 import { Button, Container } from "react-bootstrap";
 
 const DownloadButton = () => {
-  // const [showButton, setShowButton] = useState(true);
-
   const handleDownloadPDF = () => {
-    // Replace 'root' with the ID of the, root element of your app
-    const input = document.getElementById("root");
-    // setShowButton(false);
+    // Replace id with the ID of the, root element of your app
+    const input = document.getElementById("main-content");
 
     html2canvas(input).then((canvas) => {
       const pdf = new jsPDF();
+      // to covert canvas data to url
       const imgData = canvas.toDataURL("image/png");
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save("page.pdf");
-
-      // showButtonAfterDownload();
+      pdf.save("invoice.pdf");
     });
   };
 
-  // const showButtonAfterDownload = () => {
-  //   setShowButton(true);
-  // };
-
   return (
     <div className="mt-5">
-      <Container className="d-flex justify-content-end">
-        <Button className="download-button" onClick={handleDownloadPDF}>Download as PDF</Button>
+      <Container
+        style={{ display: "flex", justifyContent: "end" }}
+      >
+        <Button onClick={handleDownloadPDF}>
+          Download as PDF
+        </Button>
       </Container>
-      {/* {showButton && (
-        <button onClick={handleDownloadPDF}>Download as PDF</button>
-      )}
-      <style>
-        {`
-          @media print {
-            button {
-              display: none;
-            }
-          }
-        `}
-      </style> */}
-      <hr style={{ border: "5px solid blue" }} />
     </div>
   );
 };

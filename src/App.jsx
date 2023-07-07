@@ -7,8 +7,16 @@ import CalculationTable from "./components/CalculationTable/CalculationTable";
 function App() {
   return (
     <>
-      <Container>
-        <DownloadButton />
+      <DownloadButton />
+      <Container
+        style={{
+          paddingTop: "10px",
+          paddingRight: "40px",
+          paddingLeft: "40px",
+          paddingBottom: "40px",
+        }}
+        id="main-content"
+      >
         <InvoiceLogo />
         <InvoiceInfo />
         <CalculationTable />
