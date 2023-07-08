@@ -3,11 +3,15 @@ import DownloadButton from "./components/DownloadButton/DownloadButton";
 import InvoiceLogo from "./components/InvoiceLogo/InvoiceLogo";
 import InvoiceInfo from "./components/InvoiceInfo/InvoiceInfo";
 import CalculationTable from "./components/CalculationTable/CalculationTable";
+import { useRef } from "react";
 
 function App() {
+
+  const dataRef = useRef();
+
   return (
-    <>
-      <DownloadButton />
+    <div ref={dataRef}>
+      <DownloadButton dataRef={dataRef} />
       <Container
         style={{
           paddingTop: "10px",
@@ -17,11 +21,11 @@ function App() {
         }}
         id="main-content"
       >
-        <InvoiceLogo />
-        <InvoiceInfo />
-        <CalculationTable />
+        <InvoiceLogo dataRef={dataRef} />
+        <InvoiceInfo dataRef={dataRef} />
+        <CalculationTable dataRef={dataRef} />
       </Container>
-    </>
+    </div>
   );
 }
 

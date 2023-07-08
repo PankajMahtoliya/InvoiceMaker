@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { Button, Container } from "react-bootstrap";
 
-const DownloadButton = () => {
+const DownloadButton = ({ dataRef }) => {
   const handleDownloadPDF = () => {
     // Replace id with the ID of the, root element of your app
-    const input = document.getElementById("main-content");
+    // const input = document.getElementById("main-content");
+    const hideSections = dataRef.current.querySelectorAll(".hide-section");
+    hideSections.forEach((section) => {
+      section.style.display = "none";
+    });
 
-    html2canvas(input).then((canvas) => {
+    html2canvas(dataRef.current).then((canvas) => {
       const pdf = new jsPDF();
       // to covert canvas data to url
       const imgData = canvas.toDataURL("image/png");
@@ -18,6 +22,12 @@ const DownloadButton = () => {
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save("invoice.pdf");
     });
+
+    setTimeout(() => {
+      hideSections.forEach((section) => {
+        section.style.display = "block";
+      });
+    }, 1000);
   };
 
   return (
@@ -25,7 +35,7 @@ const DownloadButton = () => {
       <Container
         style={{ display: "flex", justifyContent: "end", padding: "0 40px" }}
       >
-        <Button onClick={handleDownloadPDF}>
+        <Button className="hide-section" onClick={handleDownloadPDF}>
           Download as PDF
         </Button>
       </Container>

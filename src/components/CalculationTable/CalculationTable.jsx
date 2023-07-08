@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Table, Button, Form, Container, Row, Col } from "react-bootstrap";
 
-const CalculationTable = () => {
+const CalculationTable = ({dataRef}) => {
   const [products, setProducts] = useState([
     { productName: "", quantity: 0, unitPrice: 0, total: 0 },
   ]);
@@ -59,7 +59,7 @@ const CalculationTable = () => {
             <th>Quantity</th>
             <th>Unit Price</th>
             <th>Total</th>
-            <th>Action</th>
+            <th className="hide-section">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -101,7 +101,7 @@ const CalculationTable = () => {
                 />
               </td>
               <td>{product.total}</td>
-              <td>
+              <td className="hide-section">
                 {index === products.length - 1 && (
                   <Button
                     style={{ padding: "2px 10px", marginRight: "2px" }}

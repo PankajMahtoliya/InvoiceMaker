@@ -63,7 +63,7 @@ const InvoiceLogo = () => {
                     }}
                     alt="Logo"
                   />
-                  <Button onClick={handleDeleteClick}>Delete</Button>
+                  <Button className="hide-section" onClick={handleDeleteClick}>Delete</Button>
                 </div>
               )}
             </div>
