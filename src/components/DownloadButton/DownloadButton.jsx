@@ -7,10 +7,10 @@ const DownloadButton = ({ dataRef }) => {
   const handleDownloadPDF = () => {
     // Replace id with the ID of the, root element of your app
     // const input = document.getElementById("main-content");
-    const hideSections = dataRef.current.querySelectorAll(".hide-section");
-    hideSections.forEach((section) => {
-      section.style.display = "none";
-    });
+      const hideSections = dataRef.current.querySelectorAll(".hide-section");
+      hideSections.forEach((section) => {
+        section.style.display = "none";
+      });
 
     html2canvas(dataRef.current).then((canvas) => {
       const pdf = new jsPDF();
@@ -33,7 +33,7 @@ const DownloadButton = ({ dataRef }) => {
   return (
     <div className="mt-5">
       <Container
-        style={{ display: "flex", justifyContent: "end", padding: "0 40px" }}
+        style={{ display: "flex", justifyContent: "end" }}
       >
         <Button className="hide-section" onClick={handleDownloadPDF}>
           Download as PDF

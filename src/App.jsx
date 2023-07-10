@@ -13,12 +13,6 @@ function App() {
     <div ref={dataRef}>
       <DownloadButton dataRef={dataRef} />
       <Container
-        style={{
-          paddingTop: "10px",
-          paddingRight: "40px",
-          paddingLeft: "40px",
-          paddingBottom: "40px",
-        }}
         id="main-content"
       >
         <InvoiceLogo dataRef={dataRef} />
