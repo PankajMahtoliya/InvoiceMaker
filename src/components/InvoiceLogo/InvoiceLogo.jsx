@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import InvoiceNoAndDate from "../InvoiceNoAndDate/InvoiceNoAndDate";
 
-const InvoiceLogo = () => {
+const InvoiceLogo = ({ setInvoiceNumber }) => {
   const [logo, setLogo] = useState(null);
   const [showButton, setShowButton] = useState(true);
 
@@ -28,7 +28,7 @@ const InvoiceLogo = () => {
       <hr style={{ border: "5px solid blue" }} />
       <Row>
         <Col>
-          <InvoiceNoAndDate />
+          <InvoiceNoAndDate setInvoiceNumber={setInvoiceNumber} />
         </Col>
         <Col>
           <div className="d-flex justify-content-end">

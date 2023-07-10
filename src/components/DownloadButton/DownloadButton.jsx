@@ -3,14 +3,17 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { Button, Container } from "react-bootstrap";
 
-const DownloadButton = ({ dataRef }) => {
+const DownloadButton = ({ dataRef, isDataFilled }) => {
   const handleDownloadPDF = () => {
     // Replace id with the ID of the, root element of your app
     // const input = document.getElementById("main-content");
+
+    // if input's are empty then download button wouldn't show
+    if(isDataFilled) {
       const hideSections = dataRef.current.querySelectorAll(".hide-section");
-      hideSections.forEach((section) => {
-        section.style.display = "none";
-      });
+    hideSections.forEach((section) => {
+      section.style.display = "none";
+    });
 
     html2canvas(dataRef.current).then((canvas) => {
       const pdf = new jsPDF();
@@ -28,14 +31,18 @@ const DownloadButton = ({ dataRef }) => {
         section.style.display = "block";
       });
     }, 1000);
+    }
   };
 
   return (
     <div className="mt-5">
-      <Container
-        style={{ display: "flex", justifyContent: "end" }}
-      >
-        <Button className="hide-section" onClick={handleDownloadPDF}>
+      <Container style={{ display: "flex", justifyContent: "end" }}>
+      {/* if input's are empty then download button wouldn't show */}
+        <Button
+          className="hide-section"
+          onClick={handleDownloadPDF}
+          disabled={!isDataFilled}
+        >
           Download as PDF
         </Button>
       </Container>

@@ -1,7 +1,40 @@
-import React from "react";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 
-const InvoiceInfo = () => {
+// set state's props received
+const InvoiceInfo = ({
+  setCustomerName,
+  setCustomerAddress,
+  setCustomerNumber,
+  setInvoiceForm,
+  setInvoiceFormAddress,
+  setInvoiceFormNumber,
+}) => {
+
+  // function's for grab input's value
+  const handleName = (e) => {
+    setCustomerName(e.target.value);
+  };
+
+  const handleAddress = (e) => {
+    setCustomerAddress(e.target.value);
+  };
+
+  const handleNumber = (e) => {
+    setCustomerNumber(e.target.value);
+  };
+
+  const handleInvoiceForm = (e) => {
+    setInvoiceForm(e.target.value);
+  }
+
+  const handleInvoiceAddress = (e) => {
+    setInvoiceFormAddress(e.target.value);
+  }
+
+  const handleInvoiceNumber = (e) => {
+    setInvoiceFormNumber(e.target.value);
+  }
+
   return (
     <div>
       <Container>
@@ -10,26 +43,23 @@ const InvoiceInfo = () => {
             <h4>Invoice To</h4>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleName}
                 className="border-0"
                 placeholder="Enter Customer's Name Here"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleAddress}
                 className="border-0"
                 placeholder="Enter Customer's Address Here"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleNumber}
                 className="border-0"
                 placeholder="Enter Customer's Phone Number Here"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
           </Col>
@@ -37,30 +67,27 @@ const InvoiceInfo = () => {
             <h4>Invoice From</h4>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleInvoiceForm}
                 className="border-0"
                 placeholder="Enter Invoice Form"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleInvoiceAddress}
                 className="border-0"
                 placeholder="Enter Invoice Form Address"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
+                onChange={handleInvoiceNumber}
                 className="border-0"
                 placeholder="Enter Invoice Form Phone Number"
-                aria-label="Username"
-                aria-describedby=""
               />
             </InputGroup>
           </Col>
-          <hr style={{border: '5px solid blue'}} />
+          <hr style={{ border: "5px solid blue" }} />
         </Row>
       </Container>
     </div>

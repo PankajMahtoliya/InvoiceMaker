@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 
-const InvoiceNoAndDate = () => {
+const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
   const [date, setDate] = useState("");
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
   };
+
+  const handleInvoiceNumber = (e) => {
+    setInvoiceNumber(e.target.value);
+  }
 
   return (
     <div>
@@ -18,6 +22,7 @@ const InvoiceNoAndDate = () => {
           </Form.Label>
           <Col sm={9}>
             <Form.Control
+              onChange={handleInvoiceNumber}
               className="border-0"
               placeholder="Put Your Invoice No"
               type="text"
