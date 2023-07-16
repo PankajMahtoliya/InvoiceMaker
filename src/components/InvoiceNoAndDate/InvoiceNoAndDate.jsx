@@ -10,7 +10,7 @@ const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
 
   const handleInvoiceNumber = (e) => {
     setInvoiceNumber(e.target.value);
-  }
+  };
 
   return (
     <div>
@@ -20,11 +20,11 @@ const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
           <Form.Label column sm={3}>
             Invoice No :
           </Form.Label>
-          <Col sm={9}>
+          <Col sm={5}>
             <Form.Control
               onChange={handleInvoiceNumber}
               className="border-0"
-              placeholder="Put Your Invoice No"
+              placeholder="Put Invoice No"
               type="text"
               min={0}
             />
@@ -34,7 +34,7 @@ const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
           <Form.Label column sm={3}>
             Date :
           </Form.Label>
-          <Col sm={9}>
+          <Col sm={5}>
             <Form.Control
               className="border-0"
               type="date"

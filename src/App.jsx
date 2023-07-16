@@ -6,25 +6,15 @@ import CalculationTable from "./components/CalculationTable/CalculationTable";
 import { useRef, useState } from "react";
 
 function App() {
-  
   // state's declare for invoice input's info and passing to it's component
   const [invoiceNumber, setInvoiceNumber] = useState("");
   const [customerName, setCustomerName] = useState("");
-  const [customerAddress, setCustomerAddress] = useState("");
-  const [customerNumber, setCustomerNumber] = useState("");
+
   const [invoiceForm, setInvoiceForm] = useState("");
-  const [invoiceFormAddress, setInvoiceFormAddress] = useState("");
-  const [invoiceFormNumber, setInvoiceFormNumber] = useState("");
+
   const dataRef = useRef();
 
-  const isDataFilled =
-    invoiceNumber &&
-    customerName &&
-    customerAddress &&
-    customerNumber &&
-    invoiceForm &&
-    invoiceFormAddress &&
-    invoiceFormNumber;
+  const isDataFilled = invoiceNumber && customerName && invoiceForm;
 
   return (
     <div ref={dataRef}>
@@ -34,11 +24,7 @@ function App() {
         <InvoiceInfo
           dataRef={dataRef}
           setCustomerName={setCustomerName}
-          setCustomerAddress={setCustomerAddress}
-          setCustomerNumber={setCustomerNumber}
           setInvoiceForm={setInvoiceForm}
-          setInvoiceFormAddress={setInvoiceFormAddress}
-          setInvoiceFormNumber={setInvoiceFormNumber}
         />
         <CalculationTable dataRef={dataRef} />
       </Container>
