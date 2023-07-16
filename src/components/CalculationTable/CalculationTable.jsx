@@ -52,8 +52,8 @@ const CalculationTable = ({dataRef}) => {
 
   return (
     <div>
-      <Table striped bordered>
-        <thead>
+      <Table bordered>
+        <thead style={{borderStyle: "hidden"}}>
           <tr>
             <th>Product Name</th>
             <th>Quantity</th>
@@ -65,7 +65,7 @@ const CalculationTable = ({dataRef}) => {
         <tbody>
           {products.map((product, index) => (
             <tr key={index}>
-              <td>
+              <td style={{padding: 0, borderStyle: "hidden"}}>
                 <Form.Control
                   type="text"
                   value={product.productName}
@@ -74,7 +74,7 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td>
+              <td style={{padding: 0, borderStyle: "hidden"}}>
                 <Form.Control
                   type="number"
                   value={product.quantity}
@@ -87,7 +87,7 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td>
+              <td style={{padding: 0, borderStyle: "hidden"}}>
                 <Form.Control
                   type="number"
                   value={product.unitPrice}
@@ -100,8 +100,8 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td>{product.total}</td>
-              <td className="hide-section">
+              <td style={{borderStyle: "hidden"}}>{product.total}</td>
+              <td style={{borderStyle: "hidden", padding: 4}} className="hide-section">
                 {index === products.length - 1 && (
                   <Button
                     style={{ padding: "2px 10px", marginRight: "2px" }}
