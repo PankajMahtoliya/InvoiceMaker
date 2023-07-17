@@ -41,7 +41,9 @@ const InvoiceLogo = ({ setInvoiceNumber }) => {
                 style={{ display: "none" }}
               />
               {showButton && (
-                <Button onClick={handleUploadClick}>Upload Logo</Button>
+                <Button className="hide-section" onClick={handleUploadClick}>
+                  Upload Logo
+                </Button>
               )}
               {logo && (
                 <div
@@ -63,7 +65,9 @@ const InvoiceLogo = ({ setInvoiceNumber }) => {
                     }}
                     alt="Logo"
                   />
-                  <Button className="hide-section" onClick={handleDeleteClick}>Delete</Button>
+                  <Button className="hide-section" onClick={handleDeleteClick}>
+                    Delete
+                  </Button>
                 </div>
               )}
             </div>

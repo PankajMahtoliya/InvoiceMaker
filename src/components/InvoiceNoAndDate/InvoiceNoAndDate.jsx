@@ -17,7 +17,7 @@ const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
       <h1>INVOICE</h1>
       <Form className="mb-4">
         <Form.Group as={Row} controlId="numberField" className="mb-4">
-          <Form.Label column sm={3}>
+          <Form.Label column sm={3} className="text-end">
             Invoice No :
           </Form.Label>
           <Col sm={5}>
@@ -31,8 +31,8 @@ const InvoiceNoAndDate = ({ setInvoiceNumber }) => {
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="datepicker">
-          <Form.Label column sm={3}>
-            Date :
+          <Form.Label column sm={3} className="text-end">
+            Invoice Date :
           </Form.Label>
           <Col sm={5}>
             <Form.Control

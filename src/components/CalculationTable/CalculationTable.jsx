@@ -36,7 +36,8 @@ const CalculationTable = ({dataRef}) => {
   };
 
   const calculateFinalTotal = () => {
-    return calculateSubTotal() + calculateVAT() - calculateDiscount();
+    const finalTotal = calculateSubTotal() + calculateVAT() - calculateDiscount();
+    return finalTotal.toFixed(2);
   };
 
   const calculateVAT = () => {
@@ -52,7 +53,7 @@ const CalculationTable = ({dataRef}) => {
 
   return (
     <div>
-      <Table bordered>
+      <Table id="calculation-table">
         <thead style={{borderStyle: "hidden"}}>
           <tr>
             <th>Product Name</th>
