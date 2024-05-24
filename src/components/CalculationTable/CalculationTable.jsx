@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Table, Button, Form, Container, Row, Col } from "react-bootstrap";
 
-const CalculationTable = ({dataRef}) => {
+const CalculationTable = ({ dataRef }) => {
   const [products, setProducts] = useState([
     { productName: "", quantity: 0, unitPrice: 0, total: 0 },
   ]);
@@ -36,7 +36,8 @@ const CalculationTable = ({dataRef}) => {
   };
 
   const calculateFinalTotal = () => {
-    const finalTotal = calculateSubTotal() + calculateVAT() - calculateDiscount();
+    const finalTotal =
+      calculateSubTotal() + calculateVAT() - calculateDiscount();
     return finalTotal.toFixed(2);
   };
 
@@ -54,7 +55,7 @@ const CalculationTable = ({dataRef}) => {
   return (
     <div>
       <Table id="calculation-table">
-        <thead style={{borderStyle: "hidden"}}>
+        <thead style={{ borderStyle: "hidden" }}>
           <tr>
             <th>Product Name</th>
             <th>Quantity</th>
@@ -66,7 +67,7 @@ const CalculationTable = ({dataRef}) => {
         <tbody>
           {products.map((product, index) => (
             <tr key={index}>
-              <td style={{padding: 0, borderStyle: "hidden"}}>
+              <td style={{ padding: 0, borderStyle: "hidden" }}>
                 <Form.Control
                   type="text"
                   value={product.productName}
@@ -75,7 +76,7 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td style={{padding: 0, borderStyle: "hidden"}}>
+              <td style={{ padding: 0, borderStyle: "hidden" }}>
                 <Form.Control
                   type="number"
                   value={product.quantity}
@@ -88,7 +89,7 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td style={{padding: 0, borderStyle: "hidden"}}>
+              <td style={{ padding: 0, borderStyle: "hidden" }}>
                 <Form.Control
                   type="number"
                   value={product.unitPrice}
@@ -101,8 +102,11 @@ const CalculationTable = ({dataRef}) => {
                   }
                 />
               </td>
-              <td style={{borderStyle: "hidden"}}>{product.total}</td>
-              <td style={{borderStyle: "hidden", padding: 4}} className="hide-section">
+              <td style={{ borderStyle: "hidden" }}>{product.total}</td>
+              <td
+                style={{ borderStyle: "hidden", padding: 4 }}
+                className="hide-section"
+              >
                 {index === products.length - 1 && (
                   <Button
                     style={{ padding: "2px 10px", marginRight: "2px" }}
@@ -112,7 +116,7 @@ const CalculationTable = ({dataRef}) => {
                     +
                   </Button>
                 )}
-                {index > -1 && (
+                {index > 0 && (
                   <Button
                     style={{ padding: "2px 12px" }}
                     variant="danger"
@@ -127,7 +131,7 @@ const CalculationTable = ({dataRef}) => {
         </tbody>
       </Table>
 
-      <Container className="mt-5 mb-5">
+      <Container className="mt-5 mb-5 ">
         <Row>
           <Col md={8}></Col>
           <Col md={4}>

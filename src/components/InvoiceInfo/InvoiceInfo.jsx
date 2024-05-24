@@ -20,19 +20,19 @@ const InvoiceInfo = ({ setCustomerName, setInvoiceForm }) => {
             <InputGroup className="mb-3">
               <Form.Control
                 onChange={handleName}
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Customer's Name Here"
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Customer's Address Here"
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Customer's Phone Number Here"
               />
             </InputGroup>
@@ -42,19 +42,19 @@ const InvoiceInfo = ({ setCustomerName, setInvoiceForm }) => {
             <InputGroup className="mb-3">
               <Form.Control
                 onChange={handleInvoiceForm}
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Invoice Form"
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Invoice Form Address"
               />
             </InputGroup>
             <InputGroup className="mb-3">
               <Form.Control
-                className="border-0"
+                className="border-1"
                 placeholder="Enter Invoice Form Phone Number"
               />
             </InputGroup>
